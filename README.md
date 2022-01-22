@@ -19,5 +19,5 @@ The remaining 179 fraud cases contain 154 Transfer transactions out of which 145
 
 ------------------------------------------------------------------------------------
 
-**Solution to Prevent Further Fraudulent Transactions**
+**Solution to Prevent Further Fraudulent Transactions**  
 Since most of the fraudulent transactions had happened when the fraudster tried to empty the Orig account. We could add a compulsory minimum deposit which should always be available in the account. Checking accounts where a transfer type transaction leaves the newbalance and oldbalance unchanged. Thus showing that the amount hasn't reached the destination and a fraudulent activity took place. Also scrutinizing the transactions around the end of the month (step: 718<) since many fraudulent activities tend to take place during that particular timeline. Transfer amounts of 1.0E7 are showing a pattern of being potential fraudulent transactions, so we could also flag transfer transactions greater than 1.0E7 and keep a track on them.
