@@ -4,7 +4,7 @@ loaded_model = pickle.load(open('XGBfraudModelv1.pkl', 'rb'))
 
 txn = input("Txn ID: ")
 fraud_no_fraud = ""
-csv = pd.read_csv('C:/Users/neave/Documents/unscript/data/AIML Dataset.csv')
+csv = pd.read_csv('AIML Dataset.csv')
 
 row = csv[csv['nameOrig']== txn]
 row = row.drop(['nameDest','nameOrig','isFraud'], axis = 1)
