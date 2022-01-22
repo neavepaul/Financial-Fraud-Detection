@@ -7,6 +7,9 @@ The Financial Management System is a software that is used to check the authenti
 In Financial Management System, participants must create a model for predicting fraudulent transactions for a financial company and then use the model's insights to create an actionable plan. The case's data is stored in a CSV file with 
 6362620 rows and 10 columns.
 
+
+------------------------------------------------------------------------------------
+
 We imported the data from the csvfile and perform some analysis on it to find certain trends.  
 We then used CatBoostClassifier to create a model which we trained.  
 We then shifted to XGBoost which is better for numeric values.  
