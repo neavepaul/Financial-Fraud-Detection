@@ -4,11 +4,10 @@ loaded_model = pickle.load(open('XGBfraudModelv1.pkl', 'rb'))
 
 txn = input("Txn ID: ")
 fraud_no_fraud = ""
-csv = pd.read_csv('C:/Users/neave/Documents/unscript/data/AIML Dataset.csv')
+csv = pd.read_csv('AIML Dataset.csv')
 
 row = csv[csv['nameOrig']== txn]
 
-#to get only value 
 amount = (row['amount']).to_string(index = False)
 step = (row['step']).to_string(index = False)
 nameOrig = (row['nameOrig']).to_string(index = False)
@@ -18,8 +17,6 @@ oldbalanceDest = (row['oldbalanceDest']).to_string(index = False)
 newbalanceDest = (row['newbalanceDest']).to_string(index = False)
 nameDest = (row['nameDest']).to_string(index = False)
 amount = (row['amount']).to_string(index = False)
-#print
-print(amount, step, nameOrig, nameDest, oldbalanceOrg, oldbalanceDest, newbalanceOrig, newbalanceDest)
 
 
 row = row.drop(['nameDest','nameOrig','isFraud'], axis = 1)
