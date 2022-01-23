@@ -8,9 +8,7 @@ csv = pd.read_csv('AIML Dataset.csv')
 app=Flask(__name__)
 model = pickle.load(open('XGBfraudModelv1.pkl', 'rb'))
 
-# csv=pd.DataFrame(data_csv)
 fraud_no_fraud = ""
-# data = pd.read_csv("AIML.csv")
 
 @app.route('/')
 def home():
@@ -20,19 +18,13 @@ def home():
 def predict():
     txn = request.form.get("id")
     row = csv[csv['nameOrig']== txn]
-    
-    #obal=str(row.oldbalanceOrg)
-    #nbal=str(row.newbalanceOrig)
-    #amt=str(row.amount)
-    #nd=str(row.nameDest)
+
 
     obal= (row['oldbalanceOrg']).to_string(index = False)
     nbal= (row['newbalanceOrig']).to_string(index = False)
     amt = (row['amount']).to_string(index = False)
     nd  = (row['nameDest']).to_string(index = False)
-    # display=row.drop(['isFraud','step','isFlaggedFraud','type','nameOrig','oldbalanceDest','newbalanceDest'],axis=1)
-    # oldBal=display.oldbalanceOrg
-    # print(oldBal)
+
     row = row.drop(['nameDest','nameOrig','isFraud'], axis = 1)
     row['errorBalanceOrig'] = row.newbalanceOrig + row.amount - row.oldbalanceOrg
     row['errorBalanceDest'] = row.oldbalanceDest + row.amount - row.newbalanceDest
