@@ -36,7 +36,7 @@ def predict():
    
     prediction = model.predict(row)
     if prediction == [0]:
-        fraud_no_fraud = "The Transaction is FRAUD!! Call 100 and inform the Bank regarding the same."
+        fraud_no_fraud = "The Transaction is FRAUD!!"
     else:
         fraud_no_fraud = "The Transaction is NOT FRAUD!!"
     
