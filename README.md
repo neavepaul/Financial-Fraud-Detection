@@ -1,5 +1,5 @@
 # UnSriptRookies22_Archarios
-UnScript Rookie’s Hackathon 2022. An Exclusive Hackathon for 2nd Year Engineering Students
+UnScript Rookie’s Hackathon 2022. An Pan-India hackathon exclusively for 2nd Year Engineering Students
 
 ## AIML Problem Statement:
 ### Financial Management System:
