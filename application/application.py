@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 import pandas as pd
 import xgboost as xgb
 
-csv = pd.read_csv('AIML Dataset.csv')
+csv = pd.read_csv('data.csv')
 application=Flask(__name__)
 model = xgb.Booster()
 model.load_model('model.bin')
