@@ -3,10 +3,12 @@ from flask import Flask, render_template, request
 import pickle
 import numpy as np
 import pandas as pd
+import xgboost as xgb
 
 csv = pd.read_csv('AIML Dataset.csv')
 app=Flask(__name__)
-model = pickle.load(open('XGBfraudModelv1.pkl', 'rb'))
+model = xgb.Booster()
+model.load_model('model.bin')
 
 fraud_no_fraud = ""
 
@@ -33,9 +35,9 @@ def predict():
     row['type'].replace('CASH_IN', 2, inplace = True)
     row['type'].replace('PAYMENT', 3, inplace = True)
     row['type'].replace('DEBIT', 4, inplace = True)
-   
-    prediction = model.predict(row)
-    if prediction == [0]:
+    row = xgb.DMatrix(row)
+    prediction = int(model.predict(row))
+    if prediction == 0:
         fraud_no_fraud = "The Transaction is FRAUD!!"
     else:
         fraud_no_fraud = "The Transaction is NOT FRAUD!!"
